@@ -23,7 +23,7 @@ public class TestController {
 
 
     /**
-     * @api {post} /user/
+     * @api {post} /user/ 用户注册
      * @apiParam {String} [firstname]  Optional Firstname of the User.
      * @apiParam {String} lastname     Mandatory Lastname.
      * @apiParam {String} country="DE" Mandatory with default value "DE".
@@ -40,7 +40,7 @@ public class TestController {
     }
 
     /**
-     * @api {get} /user/:id
+     * @api {get} /user/:id 查询用户数据
      * @apiParam {Number} id Users unique ID.
      */
     @RequestMapping(value="/list/data", method = RequestMethod.GET)
@@ -51,7 +51,7 @@ public class TestController {
     }
 
     /**
-     * @api {get} /user/:id
+     * @api {get} /user/:id 用户搜索
      * @apiHeaderExample {json} Header-Example:
      *     {
      *       "Accept-Encoding": "Accept-Encoding: gzip, deflate"
@@ -66,7 +66,7 @@ public class TestController {
     }
 
     /**
-     * @api {get} /user/:id
+     * @api {get} /user/:id 用户输入提示
      * @apiErrorExample {json} Error-Response:
      *     HTTP/1.1 404 Not Found
      *     {
