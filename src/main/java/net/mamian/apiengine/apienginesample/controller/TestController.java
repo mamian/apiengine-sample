@@ -21,12 +21,17 @@ import java.util.List;
 @RequestMapping("/api/test")
 public class TestController {
 
+
     /**
-     * 用户注册
+     * @api {post} /user/
+     * @apiParam {String} [firstname]  Optional Firstname of the User.
+     * @apiParam {String} lastname     Mandatory Lastname.
+     * @apiParam {String} country="DE" Mandatory with default value "DE".
+     * @apiParam {Number} [age=18]     Optional Age with default 18.
      *
-     * @param name 用户名称
-     * @param mobile 用户手机号
-     * @return
+     * @apiParam (Login) {String} pass Only logged in users can post this.
+     *                                 In generated documentation a separate
+     *                                 "Login" Block will be generated.
      */
     @RequestMapping(value="/register", method = RequestMethod.POST)
     @ResponseBody
@@ -35,12 +40,8 @@ public class TestController {
     }
 
     /**
-     * 用户查询
-     *
-     * @param page 页码
-     * @param pageSize 每页多少条数据
-     *
-     * @return
+     * @api {get} /user/:id
+     * @apiParam {Number} id Users unique ID.
      */
     @RequestMapping(value="/list/data", method = RequestMethod.GET)
     @ResponseBody
@@ -50,12 +51,11 @@ public class TestController {
     }
 
     /**
-     * 项目搜索页
-     *
-     * @param name 用户名称
-     * @param page 页码
-     * @param pageSize 每页多少条数据
-     * @return
+     * @api {get} /user/:id
+     * @apiHeaderExample {json} Header-Example:
+     *     {
+     *       "Accept-Encoding": "Accept-Encoding: gzip, deflate"
+     *     }
      */
     @RequestMapping(value="/search", method = RequestMethod.GET)
     @ResponseBody
@@ -66,10 +66,12 @@ public class TestController {
     }
 
     /**
-     * 名称搜索提示
-     *
-     * @param name 用户名称
-     * @return
+     * @api {get} /user/:id
+     * @apiErrorExample {json} Error-Response:
+     *     HTTP/1.1 404 Not Found
+     *     {
+     *       "error": "UserNotFound"
+     *     }
      */
     @RequestMapping(value="/search/word", method = RequestMethod.GET)
     @ResponseBody
