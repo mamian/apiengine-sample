@@ -32,6 +32,7 @@ public class TestController {
      * @apiParam (Login) {String} pass Only logged in users can post this.
      *                                 In generated documentation a separate
      *                                 "Login" Block will be generated.
+     * @apiGroup /api/test
      */
     @RequestMapping(value="/register", method = RequestMethod.POST)
     @ResponseBody
@@ -42,6 +43,7 @@ public class TestController {
     /**
      * @api {get} /user/:id 查询用户数据
      * @apiParam {Number} id Users unique ID.
+     * @apiGroup /api/test
      */
     @RequestMapping(value="/list/data", method = RequestMethod.GET)
     @ResponseBody
@@ -56,6 +58,7 @@ public class TestController {
      *     {
      *       "Accept-Encoding": "Accept-Encoding: gzip, deflate"
      *     }
+     * @apiGroup /api/test
      */
     @RequestMapping(value="/search", method = RequestMethod.GET)
     @ResponseBody
@@ -72,6 +75,7 @@ public class TestController {
      *     {
      *       "error": "UserNotFound"
      *     }
+     * @apiGroup /api/test
      */
     @RequestMapping(value="/search/word", method = RequestMethod.GET)
     @ResponseBody
