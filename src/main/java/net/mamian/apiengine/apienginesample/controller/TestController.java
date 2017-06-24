@@ -22,7 +22,18 @@ import java.util.List;
 public class TestController {
 
 
-
+    /**
+     * @api {post} /user/ 用户注册
+     * @apiParam {String} [firstname]  Optional Firstname of the User.
+     * @apiParam {String} lastname     Mandatory Lastname.
+     * @apiParam {String} country="DE" Mandatory with default value "DE".
+     * @apiParam {Number} [age=18]     Optional Age with default 18.
+     *
+     * @apiParam (Login) {String} pass Only logged in users can post this.
+     *                                 In generated documentation a separate
+     *                                 "Login" Block will be generated.
+     * @apiGroup /api/test
+     */
     @RequestMapping(value="/register", method = RequestMethod.POST)
     @ResponseBody
     public String register(String name, String mobile) {
@@ -57,7 +68,15 @@ public class TestController {
         return "";
     }
 
-    
+    /**
+     * @api {get} /user/:id 用户输入提示
+     * @apiErrorExample {json} Error-Response:
+     *     HTTP/1.1 404 Not Found
+     *     {
+     *       "error": "UserNotFound"
+     *     }
+     * @apiGroup /api/test
+     */
     @RequestMapping(value="/search/word", method = RequestMethod.GET)
     @ResponseBody
     public Object word(@RequestParam(value="name", required=true) String name) {
