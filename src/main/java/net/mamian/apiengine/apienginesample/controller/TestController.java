@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * @api /api/test 用用于项目test的接口集
+ * 用用于项目test的接口集
  *
  * @author mamian
  * @mail mamianskyma@gmail.com
