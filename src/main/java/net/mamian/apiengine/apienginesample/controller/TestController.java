@@ -68,15 +68,7 @@ public class TestController {
         return "";
     }
 
-    /**
-     * @api {get} /user/:id 用户输入提示
-     * @apiErrorExample {json} Error-Response:
-     *     HTTP/1.1 404 Not Found
-     *     {
-     *       "error": "UserNotFound"
-     *     }
-     * @apiGroup /api/test
-     */
+    
     @RequestMapping(value="/search/word", method = RequestMethod.GET)
     @ResponseBody
     public Object word(@RequestParam(value="name", required=true) String name) {
