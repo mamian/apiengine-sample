@@ -16,7 +16,7 @@
 + mock（开发中）：打开mock开关，可随机mock数据，无需为每个api的字段手动输入mock的数据
 
 ### 布署方式
-1、一台centos机器
-2、安装mongodb
-3、在centos上新建用户用于运行apiengine服务，此用户要拥有从代码服务器(如github、bitbucket)读代码的权限
-4、在代码服务器上设置各code项目的webhook地址为apiengine服务的地址（各项目的webhook地址完全一样）
++ 一台centos机器
++ 安装mongodb
++ 在centos上新建用户用于运行apiengine服务，此用户要拥有从代码服务器(如github、bitbucket)读代码的权限
++ 在代码服务器上设置各code项目的webhook地址为apiengine服务的地址（各项目的webhook地址完全一样）
